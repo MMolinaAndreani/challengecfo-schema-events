@@ -4,9 +4,9 @@ protocol EventsProtocol {
     import idl "PedidoAsignadoCommon.avdl";
 
     record PedidoCreado {
-       Andreani.challengecfo.Events.PedidoCreadoCommon.Contenido Detalle;
+       Andreani.Challengecfo.Events.PedidoCreadoCommon.Contenido Detalle;
     }
      record PedidoAsignado {
-       Andreani.challengecfo.Events.PedidoAsignadoCommon.Contenido Detalle;
+       Andreani.Challengecfo.Events.PedidoAsignadoCommon.Contenido Detalle;
     }
 }
