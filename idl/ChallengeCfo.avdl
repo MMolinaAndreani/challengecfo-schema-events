@@ -1,4 +1,4 @@
-@namespace("Andreani.challengecfo.Events.Record")
+@namespace("Andreani.Challengecfo.Events.Record")
 protocol EventsProtocol {
     import idl "PedidoCreadoCommon.avdl";
     import idl "PedidoAsignadoCommon.avdl";

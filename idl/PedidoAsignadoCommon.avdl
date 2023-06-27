@@ -1,4 +1,4 @@
-@namespace("Andreani.challengecfo.Events.PedidoAsignadoCommon")
+@namespace("Andreani.Challengecfo.Events.PedidoAsignadoCommon")
 protocol CommonProtocol {
     record Contenido {
         int numeroPedido;
