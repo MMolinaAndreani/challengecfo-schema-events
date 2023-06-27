@@ -1,0 +1,7 @@
+@namespace("Andreani.challengecfo.Events.PedidoAsignadoCommon")
+protocol CommonProtocol {
+    record Contenido {
+        int numeroPedido;
+        string nombreContenido;
+    }
+}

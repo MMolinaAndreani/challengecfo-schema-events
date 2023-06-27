@@ -1,0 +1,12 @@
+@namespace("Andreani.challengecfo.Events.Record")
+protocol EventsProtocol {
+    import idl "PedidoCreadoCommon.avdl";
+    import idl "PedidoAsignadoCommon.avdl";
+
+    record PedidoCreado {
+       Andreani.challengecfo.Events.PedidoCreadoCommon.Contenido Detalle;
+    }
+     record PedidoAsignado {
+       Andreani.challengecfo.Events.PedidoAsignadoCommon.Contenido Detalle;
+    }
+}

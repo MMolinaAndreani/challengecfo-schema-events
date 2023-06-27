@@ -1,0 +1,12 @@
+{
+  "type" : "record",
+  "name" : "Contenido",
+  "namespace" : "Andreani.challengecfo.Events.PedidoAsignadoCommon",
+  "fields" : [ {
+    "name" : "numeroPedido",
+    "type" : "int"
+  }, {
+    "name" : "nombreContenido",
+    "type" : "string"
+  } ]
+}

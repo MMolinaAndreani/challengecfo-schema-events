@@ -7,8 +7,8 @@ on:
     paths:
       - 'idl/**' # el flujo solo se ejecuta cuando se actualiza la carpeta idl.
 env:
-  GITHUB_PROJECT_OWNER: appname # reemplace por su appname
-  SOURCE_EVENTS_FILE_IDL: 'idl/Example.avdl' # archivo avdl remplace {Example}
+  GITHUB_PROJECT_OWNER: challengecfo # reemplace por su appname
+  SOURCE_EVENTS_FILE_IDL: 'idl/ChallengeCfo.avdl' # archivo avdl remplace {Example}
 jobs:
   avro: # genera los avro
     runs-on: ubuntu-latest

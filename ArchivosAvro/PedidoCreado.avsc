@@ -1,0 +1,20 @@
+{
+  "type" : "record",
+  "name" : "PedidoCreado",
+  "namespace" : "Andreani.challengecfo.Events.Record",
+  "fields" : [ {
+    "name" : "Detalle",
+    "type" : {
+      "type" : "record",
+      "name" : "Contenido",
+      "namespace" : "Andreani.challengecfo.Events.PedidoCreadoCommon",
+      "fields" : [ {
+        "name" : "numeroPedido",
+        "type" : "int"
+      }, {
+        "name" : "nombreContenido",
+        "type" : "string"
+      } ]
+    }
+  } ]
+}
