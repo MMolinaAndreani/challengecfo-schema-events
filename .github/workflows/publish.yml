@@ -1,0 +1,37 @@
+name: Publish Avro
+on:
+  workflow_dispatch: # esto permite correr el flujo manualmente.
+  push:
+    branches:
+      - main
+    paths:
+      - 'idl/**' # el flujo solo se ejecuta cuando se actualiza la carpeta idl.
+env:
+  GITHUB_PROJECT_OWNER: appname # reemplace por su appname
+  SOURCE_EVENTS_FILE_IDL: 'idl/Example.avdl' # archivo avdl remplace {Example}
+jobs:
+  avro: # genera los avro
+    runs-on: ubuntu-latest
+    steps:
+      - uses: architecture-it/actions@avro
+        with:
+          file_idl: ${{ env.SOURCE_EVENTS_FILE_IDL }}
+  Net: # publica la librería en nuget
+    name: publish lib net
+    needs: [avro]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: architecture-it/actions@avro-net
+        with: 
+          app_name: ${{ env.GITHUB_PROJECT_OWNER }}
+          github_token: ${{ secrets.ARQUITECTURA_DEPLOY }}
+          PackageVersion: 1.0.$GITHUB_RUN_NUMBER
+  Golang: # publica las structs en integracion-schemas-event-go 
+    name: publish lib go
+    needs: [avro]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: architecture-it/actions@avro-go
+        with: 
+          app_name: ${{ env.GITHUB_PROJECT_OWNER }}
+          github_token: ${{ secrets.ARQUITECTURA_DEPLOY }}

@@ -1,0 +1,53 @@
+@namespace("Andreani.RHpro.Events.Common")
+protocol CommonProtocol {
+    record StructureType{
+        int Id;
+        string Description;
+    }
+    record StructureReason{
+        int Id;
+        string Description;
+        string Reason;
+    }
+    record StructureModel{
+        int Id;
+        string Description;
+    }
+    record EmployeeData{
+        timestamp_ms  DateOfBirth;
+        timestamp_ms  HiringDate;
+        union { null, string }  ExternalId=null;
+        union { null, string }  FamilyName=null;
+        union { null, string }  FirstName=null;
+        union { null, string }  ImageUrl=null;
+        union { null, string }  LastName=null;
+        union { null, string }  MiddleName=null;
+        boolean IsActive;
+        int Id;
+    }
+    record PhaseData{
+        timestamp_ms  EndDate;
+        timestamp_ms  StartDate;
+        union { null, string }  AdvanceNotice=null;
+        union { null, string }  DecouplingCause=null;
+        boolean Compensation;
+        boolean Holidays;
+        boolean Real;
+        boolean RecognizedStartDate;
+        boolean Salary;
+        boolean Status;
+        int Id;
+        int EmployeeId;
+    }
+    record StructureData{
+        int StructureId;
+        int Id;
+        timestamp_ms  DateFrom;
+        timestamp_ms  DateTo;
+        string Description;
+        union { null, string }  ExternalId=null;
+        union { null, Andreani.RHpro.Events.Common.StructureType } Type=null;
+        union { null, Andreani.RHpro.Events.Common.StructureReason } Reason=null;
+        union { null, Andreani.RHpro.Events.Common.StructureModel } Model=null;
+    }
+}

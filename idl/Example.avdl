@@ -1,0 +1,23 @@
+@namespace("Andreani.RHpro.Events.Record")
+protocol EventsProtocol {
+    import idl "RHproCommon.avdl";
+    record Authentication{
+        string token;
+        string tenant;
+    }
+    record Employee {
+        string Token;
+        string Tenant;
+        union { null, Andreani.RHpro.Events.Common.EmployeeData } Data=null;
+    }
+    record Phase {
+        string Token;
+        string Tenant;
+        union { null, Andreani.RHpro.Events.Common.PhaseData } Data=null;
+    }
+    record Structure {
+        string Token;
+        string Tenant;
+        union { null, array<Andreani.RHpro.Events.Common.StructureData> } Data=null;
+    }  
+}
